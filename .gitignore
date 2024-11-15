@@ -1,3 +1,53 @@
+# Node.js
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+*.p12
+*.key
+*.crt
+*.csr
+
+# Docker
+docker-compose.override.yml
 db_data/
+pgdata/
+
+# Ignore the build output of the frontend
+frontend/build
+
+# Ignore the build output of the backend
+backend/build
+
+# Ignore the build output of Docker
+**/Dockerfile
+**/docker-compose.yml
