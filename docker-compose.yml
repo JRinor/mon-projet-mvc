@@ -4,7 +4,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: ma_base
+      POSTGRES_DB: bd_cocagne
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
@@ -12,7 +12,7 @@ services:
   backend:
     build: ./backend
     environment:
-      DATABASE_URL: postgres://postgres:password@db:5432/ma_base
+      DATABASE_URL: postgres://postgres:password@db:5432/bd_cocagne
     depends_on:
       - db
     ports:
@@ -23,5 +23,14 @@ services:
       - "3000:80"
     depends_on:
       - backend
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@iut-stdie.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
 volumes:
   pgdata:
