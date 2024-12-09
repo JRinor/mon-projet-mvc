@@ -23,6 +23,8 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+    environment:
+      NODE_OPTIONS: --openssl-legacy-provider
   pgadmin:
     image: dpage/pgadmin4
     environment:
